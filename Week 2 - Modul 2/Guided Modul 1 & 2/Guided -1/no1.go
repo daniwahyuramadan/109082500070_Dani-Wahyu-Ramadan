@@ -16,8 +16,7 @@ func main() {
 	fmt.Scanln(&tiga)
 
 	fmt.Println("Output awal = " + satu + " " + dua + " " + tiga)
-	
-	// Proses penukaran nilai
+
 	temp = satu
 	satu = dua
 	dua = tiga

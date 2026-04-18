@@ -30,7 +30,7 @@ func perhitunganBiaya(jumlahMhs int, lamaPerjalanan int, tujuan string, totalBia
 	if tujuan == "domestik" {
 		*totalBiaya = float64(hariDitanggung * biayaDomestik)
 	} else if tujuan == "mancanegara" {
-
+		
 		*totalBiaya = float64(hariDitanggung) * (float64(biayaDomestik) * 1.5)
 	}
 }
