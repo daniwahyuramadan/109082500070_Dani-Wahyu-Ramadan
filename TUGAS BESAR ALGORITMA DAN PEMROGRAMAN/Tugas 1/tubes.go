@@ -107,7 +107,7 @@ func selectionSortKesulitan(urutan string) {
 	for i := 0; i < JumlahTugas-1; i++ {
 		targetIdx := i
 		for j := i + 1; j < JumlahTugas; j++ {
-			if urutan == "asc" {
+			 if urutan == "asc" {
 				if DaftarTugas[j].SkalaKesulitan < DaftarTugas[targetIdx].SkalaKesulitan {
 					targetIdx = j
 				}
@@ -174,7 +174,7 @@ func tampilkanStatistik() {
 	}
 
 	fmt.Println("\n=== STATISTIK TASKMATE ===")
-	fmt.Printf("Jumlah tugas yang sudah selesai      : %d\n", tugasSelesai)
+	fmt.Printf("Jumlah tugas yang sudah selesai       : %d\n", tugasSelesai)
 
 	if tugasSelesai > 0 {
 		rataRata := float64(totalWaktu) / float64(tugasSelesai)
