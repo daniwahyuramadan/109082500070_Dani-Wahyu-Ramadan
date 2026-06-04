@@ -25,9 +25,9 @@ func tambahTugas(nama string, kategori string, kesulitan int, durasi int) {
 		DaftarTugas[JumlahTugas].Durasi = durasi
 		DaftarTugas[JumlahTugas].SudahSelesai = false
 		JumlahTugas++
-		fmt.Println("👉 Tugas berhasil ditambahkan!")
+		fmt.Println("Tugas berhasil ditambahkan!")
 	} else {
-		fmt.Println("❌ Memori penuh! Tidak bisa menambahkan tugas lagi.")
+		fmt.Println("Memori penuh! Tidak bisa menambahkan tugas lagi.")
 	}
 }
 
@@ -38,9 +38,9 @@ func ubahTugas(indeks int, nama string, kategori string, kesulitan int, durasi i
 		DaftarTugas[indeks].SkalaKesulitan = kesulitan
 		DaftarTugas[indeks].Durasi = durasi
 		DaftarTugas[indeks].SudahSelesai = status
-		fmt.Println("👉 Data tugas berhasil diperbarui!")
+		fmt.Println("Data tugas berhasil diperbarui!")
 	} else {
-		fmt.Println("❌ Indeks tidak valid.")
+		fmt.Println("Indeks tidak valid.")
 	}
 }
 
@@ -52,9 +52,9 @@ func hapusTugas(indeks int) {
 			i++
 		}
 		JumlahTugas--
-		fmt.Println("👉 Tugas berhasil dihapus!")
+		fmt.Println("Tugas berhasil dihapus!")
 	} else {
-		fmt.Println("❌ Indeks tidak valid.")
+		fmt.Println("Indeks tidak valid.")
 	}
 }
 
@@ -121,7 +121,7 @@ func selectionSortKesulitan(urutan string) {
 		DaftarTugas[i] = DaftarTugas[targetIdx]
 		DaftarTugas[targetIdx] = temp
 	}
-	fmt.Println("👉 Data berhasil diurutkan dengan Selection Sort!")
+	fmt.Println("Data berhasil diurutkan dengan Selection Sort!")
 }
 
 func insertionSortDurasi(urutan string) {
@@ -142,12 +142,12 @@ func insertionSortDurasi(urutan string) {
 		}
 		DaftarTugas[j+1] = key
 	}
-	fmt.Println("👉 Data berhasil diurutkan dengan Insertion Sort!")
+	fmt.Println("Data berhasil diurutkan dengan Insertion Sort!")
 }
 
 func tampilkanSemuaTugas() {
 	if JumlahTugas == 0 {
-		fmt.Println("📭 Belum ada data tugas.")
+		fmt.Println("Belum ada data tugas.")
 		return
 	}
 	fmt.Println("\n=== DAFTAR TUGAS RUMAH TANGGA ===")
@@ -174,13 +174,13 @@ func tampilkanStatistik() {
 	}
 
 	fmt.Println("\n=== STATISTIK TASKMATE ===")
-	fmt.Printf("✓ Jumlah tugas yang sudah selesai       : %d\n", tugasSelesai)
+	fmt.Printf("Jumlah tugas yang sudah selesai      : %d\n", tugasSelesai)
 
 	if tugasSelesai > 0 {
 		rataRata := float64(totalWaktu) / float64(tugasSelesai)
-		fmt.Printf("⏱ Rata-rata waktu tugas yang selesai : %.2f menit\n", rataRata)
+		fmt.Printf("Rata-rata waktu tugas yang selesai : %.2f menit\n", rataRata)
 	} else {
-		fmt.Println("⏱ Rata-rata waktu tugas yang selesai : 0 menit (Belum ada tugas selesai)")
+		fmt.Println("Rata-rata waktu tugas yang selesai : 0 menit (Belum ada tugas selesai)")
 	}
 }
 
@@ -196,11 +196,11 @@ func prosesUbahTugas() {
 
 	indeks := sequentialSearchNama(target)
 	if indeks == -1 {
-		fmt.Println("❌ Tugas dengan nama tersebut tidak ditemukan.")
+		fmt.Println("Tugas dengan nama tersebut tidak ditemukan.")
 		return
 	}
 
-	fmt.Printf("🎯 Tugas ditemukan di indeks ke-%d. Masukkan data baru:\n", indeks)
+	fmt.Printf("Tugas ditemukan di indeks ke-%d. Masukkan data baru:\n", indeks)
 
 	var nama, kategori string
 	var kesulitan, durasi int
@@ -232,11 +232,11 @@ func prosesHapusTugas() {
 
 	indeks := sequentialSearchNama(target)
 	if indeks == -1 {
-		fmt.Println("❌ Tugas dengan nama tersebut tidak ditemukan.")
+		fmt.Println("Tugas dengan nama tersebut tidak ditemukan.")
 		return
 	}
 
-	fmt.Printf("🎯 Tugas ditemukan di indeks ke-%d.\n", indeks)
+	fmt.Printf("Tugas ditemukan di indeks ke-%d.\n", indeks)
 	hapusTugas(indeks)
 }
 
@@ -288,9 +288,9 @@ func main() {
 			fmt.Scan(&target)
 			hasil := sequentialSearchNama(target)
 			if hasil != -1 {
-				fmt.Printf("🎯 Ketemu! Tugas ada di indeks ke-%d\n", hasil)
+				fmt.Printf("Ketemu! Tugas ada di indeks ke-%d\n", hasil)
 			} else {
-				fmt.Println("❌ Tugas tidak ditemukan.")
+				fmt.Println("Tugas tidak ditemukan.")
 			}
 
 		} else if pilihan == 6 {
@@ -299,9 +299,9 @@ func main() {
 			fmt.Scan(&target)
 			hasil := binarySearchKategori(target)
 			if hasil != -1 {
-				fmt.Printf("🎯 Ketemu! Tugas ada di indeks ke-%d (Data diurutkan berdasarkan Kategori)\n", hasil)
+				fmt.Printf("Ketemu! Tugas ada di indeks ke-%d (Data diurutkan berdasarkan Kategori)\n", hasil)
 			} else {
-				fmt.Println("❌ Kategori tidak ditemukan.")
+				fmt.Println("Kategori tidak ditemukan.")
 			}
 
 		} else if pilihan == 7 {
@@ -322,8 +322,8 @@ func main() {
 			tampilkanStatistik()
 
 		} else if pilihan != 0 {
-			fmt.Println("❌ Pilihan tidak tersedia. Silakan ulangi.")
+			fmt.Println("Pilihan tidak tersedia. Silakan ulangi.")
 		}
 	}
-	fmt.Println("👋 Terima kasih telah menggunakan TaskMate!")
+	fmt.Println("Terima kasih telah menggunakan TaskMate!")
 }
